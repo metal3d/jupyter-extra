@@ -1,0 +1,5 @@
+build
+dist
+jpyextra.egg-info
+*.pyc
+v/

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="jpyextra",
-    version="0.0.1",
+    version="0.0.2",
     author="Patrice Ferlet",
     author_email="metal3d@gmail.com",
     description="Some extra tools to work with Jupyter",

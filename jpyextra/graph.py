@@ -49,8 +49,8 @@ def rename_nodes(graph_def, rename_func):
 def show_graph(
         graph_def,
         max_const_size=32,
-        width=DEFAULT_GRAPH_WIDTH,
-        height=DEFAULT_GRAPH_HEIGHT):
+        width=None,
+        height=None):
     """Visualize TensorFlow graph.
 
     It displays a interactive graph visualisation on Jupyter Notebooks.
@@ -63,6 +63,15 @@ def show_graph(
     Taken and adapted from:
     https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/tutorials/deepdream/deepdream.ipynb<Paste>
     """
+
+    if width is None:
+        width = DEFAULT_GRAPH_WIDTH
+    if height is None:
+        height = DEFAULT_GRAPH_HEIGHT
+
+    assert width > 100
+    assert height > 200
+
     if hasattr(graph_def, 'as_graph_def'):
         graph_def = graph_def.as_graph_def()
     strip_def = strip_consts(graph_def, max_const_size=max_const_size)
